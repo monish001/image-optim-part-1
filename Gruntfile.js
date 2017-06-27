@@ -9,6 +9,17 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
+    cwebp: {
+      dynamic: {
+        files: [{
+          expand: true,
+          cwd: 'images/',
+          src: ['*.{png,jpg,gif}'],
+          dest: 'images/',
+        }]
+      }
+    },
+
     responsive_images: {
       dev: {
         options: {
@@ -65,6 +76,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-mkdir');
-  grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images']);
+  grunt.loadNpmTasks('grunt-cwebp');
+  grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images', 'cwebp']);
 
 };
