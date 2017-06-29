@@ -12,6 +12,8 @@ I've left some boilerplate below for you.
 
 */
 
+@import url(http://weloveiconfonts.com/api/?family=zocial);
+
 body {
   max-width: 800px;
   margin: auto;
@@ -27,4 +29,19 @@ h1 {
 
 img {
   max-width: 100%;
+}
+
+
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+}
+
+ul {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+  display: inline;
 }
